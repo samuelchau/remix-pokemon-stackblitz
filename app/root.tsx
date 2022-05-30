@@ -8,8 +8,16 @@ import {
 } from '@remix-run/react';
 import type { MetaFunction } from '@remix-run/node';
 
+import type { LinksFunction } from 'remix';
+
+import tailwindUrl from '~/styles/tailwind.css';
+
 export const meta: MetaFunction = () => {
   return { title: 'New Remix App' };
+};
+
+export let links: LinksFunction = () => {
+  return [{ rel: 'stylesheet', href: tailwindUrl }];
 };
 
 export default function App() {
